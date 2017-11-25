@@ -1,1 +1,3 @@
 duckduckgo2
+mtranslate
+langdetect

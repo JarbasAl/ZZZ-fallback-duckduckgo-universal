@@ -16,7 +16,11 @@ import re
 import duckduckgo as ddg
 
 from mycroft.util import LOG
-from mycroft.skills.core import FallbackSkill
+
+from os.path import dirname
+import sys
+sys.path.append(dirname(__file__))
+from auto_translatable import AutotranslatableFallback
 
 
 def split_sentences(text):
@@ -36,7 +40,7 @@ def split_sentences(text):
     return sents
 
 
-class DuckduckgoSkill(FallbackSkill):
+class DuckduckgoSkill(AutotranslatableFallback):
     # Only ones that make sense in
     # <question_word> <question_verb> <noun>
     question_words = [
@@ -58,6 +62,7 @@ class DuckduckgoSkill(FallbackSkill):
 
     def __init__(self):
         super(DuckduckgoSkill, self).__init__()
+        self.input_lang = "en-us"
 
     def initialize(self):
         self.register_fallback(self.respond_to_question, 10)

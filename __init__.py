@@ -17,13 +17,8 @@ import duckduckgo as ddg
 
 from mycroft.util import LOG
 
-try:
-    from mycroft.skills.auto_translatable import AutotranslatableFallback
-except ImportError:
-    from os.path import dirname
-    import sys
-    sys.path.append(dirname(__file__))
-    from auto_translatable import AutotranslatableFallback
+
+from mycroft_jarbas_utils.skills.auto_translatable import AutotranslatableFallback
 
 
 def split_sentences(text):

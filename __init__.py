@@ -65,6 +65,12 @@ class DuckduckgoSkill(AutotranslatableFallback):
     def initialize(self):
         self.register_fallback(self.respond_to_question, 10)
 
+    def get_intro_message(self):
+        name = "duck duck go"
+        return "you installed universal " + name + " skill, you should " \
+               "also remove or blacklist the official " + name + \
+               " skill to avoid potential problems"
+
     @classmethod
     def format_related(cls, abstract, query):
         LOG.debug('Original abstract: ' + abstract)

@@ -1,2 +1,2 @@
 duckduckgo2
-git+https://github.com/JarbasAl/mycroft_jarbas_utils
+mycroft_jarbas_utils
